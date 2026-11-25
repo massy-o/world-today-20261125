@@ -1,29 +1,32 @@
-[![make.fun · news-image-20261125](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
-[![rank](https://make.fun/badge/news-image-20261125/massy-o/world-today-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
-[![reward](https://make.fun/badge/news-image-20261125/massy-o/world-today-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
-
 # THE WORLD TODAY — Wednesday 25 November 2026
 
-One image that sums up Wednesday 25 November 2026's world news, drawn by
-a program for the make.fun news-image-20261125 bounty.
+[![Competition](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![Rank](https://make.fun/badge/news-image-20261125/massy-o/world-today-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![Reward](https://make.fun/badge/news-image-20261125/massy-o/world-today-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-`main.py` (pure Python 3 standard library — no assets, no network)
-renders a wire-service front page at 1024×1024: a masthead, the day's
-angle in one line, six full stories with fact lines (Nvidia's faded
-comeback rally, China's probe of Shanghai chief Chen Jining, the Kyiv
-strikes, Riyadh's twice-hit PIF tower, the UN femicide report and the
-landmine toll at a five-year high), a ten-figure day-in-numbers strip,
-and thirty one-line briefs — 58 items in all, every one compiled from
-the day's wire reports.
+One page that sums up Wednesday 25 November 2026: six story cards
+(Nvidia's rally fizzles, China probes Shanghai's party chief, Kyiv
+strikes kill 14, Riyadh's PIF tower is hit twice, a UN femicide
+report, landmine casualties at a five-year high), a ten-figure
+numbers strip, and thirty briefs — 58 sourced facts in a single
+1024×1024 image.
 
-The stories were selected and the page designed with Groq models
-(`openai/gpt-oss-120b` for the plan, `qwen/qwen3.8-27b` as sub-editor)
-working from a sourced candidate pool of the day's news; a second model
-fact-checked the first one's draft before anything was drawn. The
-drawing engine, bitmap typeface and PNG writer are hand-built in the
-file, and two runs produce byte-identical output.
+## Run it
 
-Run it the way the grader does: `python3 main.py` — it writes
-`/output/entry.png`.
+    python3 main.py
 
-MIT licensed.
+Writes `/output/entry.png`. Pure Python 3 standard library — the
+PNG encoder and the 5×7 pixel typeface are both in `main.py`.
+No network access; two runs produce byte-identical output.
+
+## How the page was made
+
+The day's wire reports (AP, AFP, Reuters, SCMP, Dow Jones wires)
+were collected into a 51-item candidate pool. Groq's
+`gpt-oss-120b` ranked the pool and designed the page; `qwen3.8-27b`
+sub-edited the draft and corrected two facts before print.
+The renderer was then written and revised against its own output.
+
+## License
+
+MIT
